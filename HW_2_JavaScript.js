@@ -6,6 +6,10 @@ const valstring = function(stroka) {
     let symbols = '!#$%^&*()<>?/\|}{~:`;"][№+='
     let space = ' '
     let validstr = true
+    // split разбивает string на массив
+    // includes проверяет наличие определенного элемента и возвращает true или false соответственно
+    // isNaN преобразует тестируемое значение в число и возвращает false, если оно не NaN
+    // ! преобразует false в true и наоборот
     for (probel in symbols.split("")) {
         if (stroka.includes(symbols[probel])) {
         space = `${space}"${symbols[probel]}" `
@@ -16,6 +20,8 @@ const valstring = function(stroka) {
         } else if (stroka.length < 5 || stroka.length > 64){
             alert(`${stroka} имеет длину ${stroka.length}, введите от 5 до 64 символов`)
         } else if (!isNaN(stroka)) {
+    // toLowerCase позволяет преобразовать строку в нижний регистр, не изменяя значения строки
+    // search выполняет поиск первого соответствия, в противном случае (если соответствие не найдено) метод вернёт значение –1
             alert(`${stroka} должна содержать хотя бы одну букву`)
         } else if (stroka.toLowerCase() == stroka) {
             alert(`${stroka} должна содержать хотя бы одну ЗАГЛАВНУЮ букву`)
@@ -35,15 +41,16 @@ const valstring = function(stroka) {
 valstring(stroka = prompt("Введите от 5 до 64 символов, у вас должна быть хотя бы одна заглавная буква, хотя бы одна цифра и хотя бы одна @"))
 
 // 1. Написать скриптик, который сосчитает и выведет результат от возведения 2 в степень 10, начиная со степени 1
+// Math.pow 
 for (i=1;i<=10;i++){
     console.log(Math.pow(2,i))
 }
 
 // 1*. Преобразовать 1 задачу в функцию, принимающую на вход степень, в которую будет возводиться число 2
-function maz(i){
+function exponentiation(i){
     console.log(Math.pow(2,i))
 }
-maz(2)
+exponentiation(2)
 
 // 2. Написать скрипт, который выведет 5 строк в консоль таким образом, чтобы в первой строчке выводилось :), во второй :):) и так далее
 // Пример в консоли:
@@ -52,11 +59,12 @@ maz(2)
 // :):):)
 // :):):):)
 // :):):):):)
-p= [];
-for (i=0, k = ':)';i<=5;i++, p.push(k)){
-
-    console.log(p.join(''))
+smile = [];
+for (i=0, k = ':)';i<=5;i++, smile.push(k)){
+    console.log(smile.join(''))
 }
+// push добавляет один или более элементов в конец массива и возвращает новую длину массива
+// join объединяет все элементы массива (или массивоподобного объекта) в строку
 
 // 2*. Преобразовать 2 задачу в функцию, принимающую на вход строку, которая и будет выводиться в консоль (как в условии смайлик), а также количество строк для вывода 
 // e.g. function printSmile(stroka, numberOfRows)
@@ -75,7 +83,7 @@ printSmile(':)',4)
 // e.g. function getWordStructure(word)
 // В консоли: 
 // Слово (word) состоит из  (число) гласных и (число) согласных букв
-
+// Проверки: 'case', 'Case', 'Check-list'
 function getWordStructure(word) {
     var countV = 0; countC = 0;
     var countVowels = 'AaEeIiOoUuYy'
@@ -90,11 +98,9 @@ function getWordStructure(word) {
     console.log('Слово :', word, "Состоит из", countV, 'согласных'+ " "+ 'и' + " " + 'из', countC, 'гласных')
 }
 getWordStructure('Check-list')
-// Проверки: 'case', 'Case', 'Check-list'
 
 // 4**. Написать функцию, которая проверяет, является ли слово палиндромом
 // e.g. function isPalindrom(word)
-
 // Проверки: 'abba', 'Abba'
 function isPalindrom(word){
     if (word.toLowerCase() == word.toLowerCase().split('').reverse().join('')){
@@ -104,3 +110,4 @@ function isPalindrom(word){
     }
 }
 isPalindrom('Abba')
+// reverse меняет порядок следования элементов в массиве на обратный и возвращает переупорядоченный массив
