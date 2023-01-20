@@ -1,6 +1,9 @@
 # JavaScript
 
+Homeworks:
+
  ##### Working with variables and data types:
+
 <details>
     <summary>HW_1</summary>
     
@@ -92,7 +95,7 @@ HW_2*
 
 </details>
 
-Tasks with array of objects:
+##### Tasks with array of objects:
  
  <details>
     <summary>HW_3</summary>
