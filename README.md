@@ -92,7 +92,9 @@ HW_2*
 
 </details>
 
-<details>
+Tasks with array of objects:
+ 
+ <details>
     <summary>HW_3</summary>
 
 Task 1.
